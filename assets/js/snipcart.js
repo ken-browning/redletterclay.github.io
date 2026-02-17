@@ -63,12 +63,10 @@
   // keep track of local pickup discount
   //
 
-  updateAttr();
   Snipcart.store.subscribe(updateAttr);
 
   function updateAttr() {
     const state = Snipcart.store.getState();
-    if (state.cart.status === 0) return;
     const items = state.cart.discounts.items;
     const hasLocalDiscount = items.some((d) => d.code === DISCOUNT_CODE);
     document.body.setAttribute(
@@ -80,4 +78,35 @@
       sessionStorage.removeItem("rlc.local-pickup-dismissed");
     }
   }
+
+  //
+  // support local pickup switch
+  //
+
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-action]");
+    switch (btn?.getAttribute("data-action")) {
+      case "toggle_local_pickup":
+        debugger;
+        if (
+          document.body.getAttribute("data-local-pickup-inflight") === "true"
+        ) {
+          return;
+        }
+
+        try {
+          document.body.setAttribute("data-local-pickup-inflight", "true");
+          if (
+            document.body.getAttribute("data-local-pickup-discount") === "true"
+          ) {
+            Snipcart.api.cart.removeDiscount(DISCOUNT_CODE);
+          } else {
+            Snipcart.api.cart.applyDiscount(DISCOUNT_CODE);
+          }
+        } finally {
+          document.body.setAttribute("data-local-pickup-inflight", "false");
+        }
+        break;
+    }
+  });
 })();
