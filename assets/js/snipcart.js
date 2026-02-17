@@ -18,24 +18,6 @@
     }),
   ]);
 
-  Snipcart.events.on("shipping.selected", (shippingMethod) => {
-    (async () => {
-      const isLocalPickup =
-        shippingMethod.method === "Local Pick-Up in Chicago";
-      if (isLocalPickup) {
-        console.log("Snipcart discount: applying");
-        await Snipcart.api.cart.applyDiscount(DISCOUNT_CODE);
-        console.log("Snipcart discount: applied");
-      } else {
-        console.log("Snipcart discount: removing");
-        await Snipcart.api.cart.removeDiscount(DISCOUNT_CODE);
-        console.log("Snipcart discount: removed");
-      }
-    })().catch((err) => {
-      console.warn("Snipcart discount update failed:", err);
-    });
-  });
-
   //
   // local pickup banner
   //
