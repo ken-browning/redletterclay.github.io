@@ -83,25 +83,24 @@
   // support local pickup switch
   //
 
-  document.addEventListener("click", function (e) {
+  document.addEventListener("click", async (e) => {
     const btn = e.target.closest("[data-action]");
     switch (btn?.getAttribute("data-action")) {
       case "toggle_local_pickup":
-        debugger;
         if (
           document.body.getAttribute("data-local-pickup-inflight") === "true"
         ) {
           return;
         }
 
+        document.body.setAttribute("data-local-pickup-inflight", "true");
         try {
-          document.body.setAttribute("data-local-pickup-inflight", "true");
           if (
             document.body.getAttribute("data-local-pickup-discount") === "true"
           ) {
-            Snipcart.api.cart.removeDiscount(DISCOUNT_CODE);
+            await Snipcart.api.cart.removeDiscount(DISCOUNT_CODE);
           } else {
-            Snipcart.api.cart.applyDiscount(DISCOUNT_CODE);
+            await Snipcart.api.cart.applyDiscount(DISCOUNT_CODE);
           }
         } finally {
           document.body.setAttribute("data-local-pickup-inflight", "false");
