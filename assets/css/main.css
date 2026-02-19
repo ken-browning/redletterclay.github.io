@@ -777,6 +777,20 @@ input.email {
   transition: transform 1s ease;
 }
 
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c12121'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c12121'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 2rem;
+  opacity: 1;
+}
+
 .fade-in {
   animation: fadeIn;
   animation-duration: 2s;
@@ -925,12 +939,16 @@ div#mc_embed_signup input {
   opacity: 1 !important; /* Optional: ensures it's solid white, not transparent */
 }
 
-body[data-local-pickup-discount=false] .price-local {
+.price-local, .price-ship {
   display: none;
 }
 
-body[data-local-pickup-discount=true] .price-ship {
-  display: none;
+body[data-local-pickup-discount=true] .price-local {
+  display: block;
+}
+
+body[data-local-pickup-discount=false] .price-ship {
+  display: block;
 }
 
 /* Remove gradient from glightbox description on mobile */
@@ -1471,13 +1489,42 @@ div.tags .btn {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  min-height: 200px;
 }
 
 .card-body {
   overflow: hidden;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .card-details {
+    opacity: 1 !important;
+  }
+  .card:hover .card-body img,
+  .card:active .card-body img {
+    transform: scale(1.05);
+  }
+  .card:hover .card-details h4 i {
+    animation: none !important;
+  }
+}
+/* Larger tap targets on mobile */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 2rem;
+  }
+  .product-thumb a {
+    display: block;
+    padding: 1rem;
+    margin: -1rem;
+  }
+}
+/* Visual feedback on tap */
+@media (hover: none) {
+  .card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
 .card-details {
   position: absolute;
   width: 50%;
@@ -1750,6 +1797,11 @@ div.tags .btn {
     transform: translateY(0);
   }
 }
+.banner-container {
+  min-height: 55px;
+  display: block;
+}
+
 .local-pickup-banner {
   display: none;
 }
@@ -1764,7 +1816,7 @@ body[data-local-pickup-discount=false][data-local-pickup-zone=true]:not([data-lo
   padding: 0.6rem 0;
   font-size: 1.1rem;
   line-height: 1.4;
-  min-height: 54px;
+  min-height: 55px;
 }
 
 .local-pickup-banner__inner {
@@ -1829,6 +1881,10 @@ body[data-local-pickup-discount=false][data-local-pickup-zone=true]:not([data-lo
   align-items: center;
 }
 
+.form-switch {
+  padding-left: 0 !important;
+}
+
 .local-pickup-switch {
   margin: 0;
   padding: 0;
@@ -1857,12 +1913,12 @@ body[data-local-pickup-discount=false][data-local-pickup-zone=true]:not([data-lo
   transition: transform 0.15s ease-in-out;
 }
 .local-pickup-switch:focus-visible {
-  outline: 2px solid #0d6efd;
+  outline: 2px solid #24A9CA;
   outline-offset: 2px;
 }
 
 body[data-local-pickup-discount=true] .local-pickup-switch {
-  background-color: #0d6efd;
+  background-color: #24A9CA;
 }
 body[data-local-pickup-discount=true] .local-pickup-switch::after {
   transform: translateX(1.5em);

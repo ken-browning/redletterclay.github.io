@@ -61,26 +61,28 @@
 <!-- End Jekyll SEO tag -->
 
   </head>
+  <div class="container-fluid g-0 banner-container">
   <div class="local-pickup-banner bg-red animate__animated animate__slideInDown" role="region" aria-label="Local pickup discount">
-  <div class="local-pickup-banner__inner">
-    <p class="local-pickup-banner__text">
-      <strong>15% off</strong> when you pick up in the Chicago area.
-    </p>
-    <div class="local-pickup-banner__actions">
-      <button type="button" class="local-pickup-banner__btn local-pickup-banner__btn--apply" data-action="toggle_local_pickup_discount">
-        Apply 15% off
-      </button>
-      <button type="button" class="local-pickup-banner__btn local-pickup-banner__btn--dismiss" data-action="dismiss_local_pickup_banner"
-        aria-label="Dismiss banner">
-        Dismiss
-      </button>
+    <div class="local-pickup-banner__inner">
+      <p class="local-pickup-banner__text">
+        <strong>15% off</strong> when you pick up in the Chicago area.
+      </p>
+      <div class="local-pickup-banner__actions">
+        <button type="button" class="local-pickup-banner__btn local-pickup-banner__btn--apply" data-action="toggle_local_pickup_discount">
+          Apply 15% off
+        </button>
+        <button type="button" class="local-pickup-banner__btn local-pickup-banner__btn--dismiss" data-action="dismiss_local_pickup_banner"
+          aria-label="Dismiss banner">
+          Dismiss
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
   <div class="container-fluid nav-stick sticky-top bg-white hero ">
-  <nav class="navbar navbar-expand-xl">
-      <div class="container">
+  <nav class="navbar navbar-expand-xl mb-4">
+      <div class="container-fluid">
         <div class="d-inline-flex flex-fill align-items-center justify-content-between">
           <div class="pe-4 animate__animated animate__jackInTheBox animate__delay-0.5s">
             <?xml version="1.0" encoding="UTF-8"?>
@@ -91,7 +93,7 @@
              </svg></a>
           </div>
           <div class="d-none d-sm-block">
-            <h1 class="navbar-brand fst-italic pt-3 pe-5"><a href="/" class="active">Red Letter Clay</a></h1>
+            <h1 class="navbar-brand fst-italic pt-3 pe-0 pe-5"><a href="/" class="active">Red Letter Clay</a></h1>
           </div>
           <div class="d-none d-xl-flex navbar-expand-xl flex-fill justify-content-evenly pt-3">
             <h3 class="navbar-nav text-center"><a href="/shop/">Shop</a></h3>
@@ -102,10 +104,13 @@
           </div>
           
             
-              <div class="d-flex align-items-center gap-2 animate__animated animate__flipInX cart-block">
-                <div class="form-check form-switch local-pickup-switch-wrapper mb-0 mt-1">
+              <div class="form-check form-switch local-pickup-switch-wrapper mb-0 mt-1">
+                <div class="vstack align-items-center">
+                  <h6 class="text-black">LOCAL PICK-UP</h6>
                   <button type="button" class="local-pickup-switch" role="switch" data-action="toggle_local_pickup_discount" aria-label="Local pickup 15% off"></button>
                 </div>
+              </div>
+              <div class="d-flex align-items-center gap-2 animate__animated animate__flipInX cart-block">
                 <button type="button" class="btn btn-cart bg-white position-relative snipcart-checkout mt-1">
                   <i class="fa-solid fa-bag-shopping text-black fs-1"></i>
                 </button>
@@ -229,8 +234,15 @@
     class="d-flex container flex-wrap flex-row animate__animated animate__fadeIn justify-content-center justify-content-md-start">
     
     
+    
+    
+    
+
+    
+
+    
     <div class="card col-sm-12 col-md-6 col-lg-4 border border-0 stockable mb-5 animate__animated animate__zoomIn"
-        data-productId="T-0001-PNK">
+        data-product-id="T-0001-PNK">
         <div class="card-header bg-white border border-0">
             <div class="d-flex border-bottom-0 border-right-0 justify-content-between align-items-center border border-2 pt-2">
                 <div>
@@ -258,12 +270,19 @@
                 
 
             </p>
-            <div class="hstack align-items-center justify-content-between border-top-0 border-2 border px-3 pt-3">
-                <div>
-                    <h4 class="text-center alt">
-                        $34
+            <div class="hstack justify-content-between border-top-0 border-2 border px-3 pt-3">
+                <div class="animate__animated animate__flipInX animate__delay-1s">
+                    <h4 class="text-start alt">
+                        <div class="price-ship"><a alt="Local Price" aria-disabled="true"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="Free Shipping to United States."
+                            >
+                            $34 <i class="fa-solid fa-truck-fast fc-7 opacity-50"></i></div>
+                        <div class="price-local">
+                            <a alt="Local Price" aria-disabled="true" data-bs-toggle="tooltip" data-bs-title="Receive 15% off your order with local pick-up in Chicago.">$28.90 <i class="fa-solid fa-map-pin fc-7 opacity-50"></i></a></span>
                         
-                         <a alt="Local Price" class="fc-5" aria-disabled="true" data-bs-toggle="tooltip" data-bs-title="Illinois customers: choose Local Pick-Up and receive 15% off your order. The discount will be refunded after checkout."><i class="fa-solid fa-map-pin opacity-75"></i> $28</a></h4>
+                        </div>
+                    </h4>
                 </div>
                 <div class="d-inline-block card-details">
                     <h4 class="text-end alt fw-normal text-uppercase fs-3"><a href="/products/T-0001-PNK/"
@@ -281,8 +300,15 @@
     </div>
     
     
+    
+    
+    
+
+    
+
+    
     <div class="card col-sm-12 col-md-6 col-lg-4 border border-0 stockable mb-5 animate__animated animate__zoomIn"
-        data-productId="J-0004-BLU">
+        data-product-id="J-0004-BLU">
         <div class="card-header bg-white border border-0">
             <div class="d-flex border-bottom-0 border-right-0 justify-content-between align-items-center border border-2 pt-2">
                 <div>
@@ -310,12 +336,19 @@
                 
 
             </p>
-            <div class="hstack align-items-center justify-content-between border-top-0 border-2 border px-3 pt-3">
-                <div>
-                    <h4 class="text-center alt">
-                        $65
+            <div class="hstack justify-content-between border-top-0 border-2 border px-3 pt-3">
+                <div class="animate__animated animate__flipInX animate__delay-1s">
+                    <h4 class="text-start alt">
+                        <div class="price-ship"><a alt="Local Price" aria-disabled="true"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="Free Shipping to United States."
+                            >
+                            $65 <i class="fa-solid fa-truck-fast fc-7 opacity-50"></i></div>
+                        <div class="price-local">
+                            <a alt="Local Price" aria-disabled="true" data-bs-toggle="tooltip" data-bs-title="Receive 15% off your order with local pick-up in Chicago.">$55.25 <i class="fa-solid fa-map-pin fc-7 opacity-50"></i></a></span>
                         
-                         <a alt="Local Price" class="fc-5" aria-disabled="true" data-bs-toggle="tooltip" data-bs-title="Illinois customers: choose Local Pick-Up and receive 15% off your order. The discount will be refunded after checkout."><i class="fa-solid fa-map-pin opacity-75"></i> $55</a></h4>
+                        </div>
+                    </h4>
                 </div>
                 <div class="d-inline-block card-details">
                     <h4 class="text-end alt fw-normal text-uppercase fs-3"><a href="/products/J-0004-BLU/"
@@ -333,8 +366,15 @@
     </div>
     
     
+    
+    
+    
+
+    
+
+    
     <div class="card col-sm-12 col-md-6 col-lg-4 border border-0 stockable mb-5 animate__animated animate__zoomIn"
-        data-productId="B-0002-BLK">
+        data-product-id="B-0002-BLK">
         <div class="card-header bg-white border border-0">
             <div class="d-flex border-bottom-0 border-right-0 justify-content-between align-items-center border border-2 pt-2">
                 <div>
@@ -362,12 +402,19 @@
                 
 
             </p>
-            <div class="hstack align-items-center justify-content-between border-top-0 border-2 border px-3 pt-3">
-                <div>
-                    <h4 class="text-center alt">
-                        $52
+            <div class="hstack justify-content-between border-top-0 border-2 border px-3 pt-3">
+                <div class="animate__animated animate__flipInX animate__delay-1s">
+                    <h4 class="text-start alt">
+                        <div class="price-ship"><a alt="Local Price" aria-disabled="true"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="Free Shipping to United States."
+                            >
+                            $52 <i class="fa-solid fa-truck-fast fc-7 opacity-50"></i></div>
+                        <div class="price-local">
+                            <a alt="Local Price" aria-disabled="true" data-bs-toggle="tooltip" data-bs-title="Receive 15% off your order with local pick-up in Chicago.">$44.20 <i class="fa-solid fa-map-pin fc-7 opacity-50"></i></a></span>
                         
-                         <a alt="Local Price" class="fc-5" aria-disabled="true" data-bs-toggle="tooltip" data-bs-title="Illinois customers: choose Local Pick-Up and receive 15% off your order. The discount will be refunded after checkout."><i class="fa-solid fa-map-pin opacity-75"></i> $44</a></h4>
+                        </div>
+                    </h4>
                 </div>
                 <div class="d-inline-block card-details">
                     <h4 class="text-end alt fw-normal text-uppercase fs-3"><a href="/products/B-0002-BLK/"
@@ -626,16 +673,10 @@ Chicago, IL
               </div>
           </div>
           <div class="col-sm-12 col-md-5 text-center">
-            <div class="hstack justify-content-around flex-row-reverse mt-5 mt-md-0 pb-3">
+            <div class="hstack justify-content-between flex-row-reverse mt-5 mt-md-0 pb-3">
               <h3 class="fw-semibold"><a href="/frequently-asked-questions/">FAQ</a></h3>
               <h3 class="fw-semibold"><a href="/sales/">Sales + Returns</a></h3>
               <h3 class="fw-semibold"><a href="/contact/">Contact</a></h3>
-            </div>
-            <div class="hstack justofy-content-around flex-row-reverse">
-              <div class="form-check form-switch pb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-              </div>
-              <h3 class="fw-lighter pe-3 text-uppercase">Shop Local for 15% OFF</h3>
             </div>
             <h3 class="fw-lighter text-center text-sm-end"><a href="https://www.instagram.com/red_letter_clay">Follow on Instagram<span class="text-light ps-3"><i class="fa-brands fa-instagram" alt="Instagram Profile"></i></span></a></h3>
           </div>
